@@ -213,6 +213,14 @@ send messages from the server.
 
 ## Videos and GitHub
 
+The hero and showcase currently use public Vercel Blob MP4 URLs in
+`src/app/page.tsx` and `src/components/selected-work/projects.ts`.
+The showcase video elements request anonymous CORS access because Three.js
+uploads their frames as WebGL textures. Any replacement video host must return
+an appropriate `Access-Control-Allow-Origin` header and support byte-range
+requests. Use permanent public URLs, not expiring private-store signatures.
+With these hosted URLs, deployments from GitHub do not need the local videos.
+
 `public/videos/` is deliberately excluded from Git. Several original videos
 exceed GitHub's 100 MiB per-file limit; keep these files locally and back them
 up separately. GitHub stores the source code, not the video library or the

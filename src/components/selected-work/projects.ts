@@ -13,14 +13,14 @@ export type Project = {
 };
 
 export const reelClips = [
-  { title: "ASURATECH / Logo reveal", src: "/videos/showcase/Logo_reveal_for_ASURATECH_SOLUTIONS_202608252019.mp4" },
-  { title: "ASURATECH", src: "/videos/showcase/AsuraTECH.mp4" },
-  { title: "GitHub", src: "/videos/showcase/GitHub.mp4" },
-  { title: "Gym Asura", src: "/videos/showcase/gymasura.mp4" },
-  { title: "Lighthouse", src: "/videos/showcase/Lighthouse.mp4" },
-  { title: "UI / UX", src: "/videos/showcase/UIUX.mp4" },
-  { title: "1013", src: "/videos/showcase/1013.mp4" },
-  { title: "Hero", src: "/videos/showcase/hero.mp4" },
+  { title: "ASURATECH / Logo reveal", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/Logo_reveal_for_ASURATECH_SOLUTIONS_202608252019.mp4" },
+  { title: "ASURATECH", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/AsuraTECH.mp4" },
+  { title: "GitHub", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/GitHub.mp4" },
+  { title: "Gym Asura", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/gymasura.mp4" },
+  { title: "Lighthouse", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/Lighthouse.mp4" },
+  { title: "UI / UX", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/UIUX.mp4" },
+  { title: "1013", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/1013.mp4" },
+  { title: "Hero", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/hero.mp4" },
 ];
 
 export const projects: Project[] = reelClips.map((clip, index) => ({

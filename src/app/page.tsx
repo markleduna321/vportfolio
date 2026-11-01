@@ -120,7 +120,7 @@ export default function Home() {
             preload="auto"
             aria-hidden="true"
           >
-            <source src="/videos/hero.mp4" type="video/mp4" />
+            <source src="https://vsseqqcyieltucqr.public.blob.vercel-storage.com/hero.mp4" type="video/mp4" />
           </video>
           <div className={styles.heroShade} aria-hidden="true" />
           <div className={`${styles.heroContent} ${styles.delayedReveal}`}>

@@ -161,6 +161,7 @@ export default function VintageReel() {
       )}
       <video
         ref={videoRef}
+        crossOrigin="anonymous"
         className={sceneError ? styles.fallbackVideo : styles.textureVideo}
         src={clip.src}
         muted

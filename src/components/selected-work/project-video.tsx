@@ -135,6 +135,7 @@ export default function ProjectVideo({
     <>
       <video
         ref={videoRef}
+        crossOrigin="anonymous"
         className={preview ? styles.previewVideo : styles.video}
         src={load ? project.src ?? undefined : undefined}
         poster={project.poster}
