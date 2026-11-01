@@ -1,0 +1,61 @@
+:root {
+  --background: #19201c;
+  --foreground: #f5f2e8;
+  --text-secondary: #b7c1b4;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 82px;
+  color-scheme: dark;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid #c8ef72;
+  outline-offset: 4px;
+}
+
+@media (max-width: 1100px) {
+  html { scroll-padding-top: 72px; }
+}
+
+::selection {
+  background: #c8ef72;
+  color: #19201c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-duration: 0.01ms !important;
+  }
+}
