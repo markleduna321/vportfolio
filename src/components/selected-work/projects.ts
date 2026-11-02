@@ -1,37 +1,69 @@
 export type Project = {
   id: string;
-  number: string;
-  category: string;
   title: string;
-  description: string;
-  tags: string[];
   src: string | null;
+  orientation: "landscape" | "portrait";
   poster?: string;
   captions?: string;
-  previewStart?: number;
-  previewEnd?: number;
 };
 
-export const reelClips = [
-  { title: "ASURATECH / Logo reveal", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/Logo_reveal_for_ASURATECH_SOLUTIONS_202608252019.mp4" },
-  { title: "ASURATECH", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/AsuraTECH.mp4" },
-  { title: "GitHub", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/GitHub.mp4" },
-  { title: "Gym Asura", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/gymasura.mp4" },
-  { title: "Lighthouse", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/Lighthouse.mp4" },
-  { title: "UI / UX", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/UIUX.mp4" },
-  { title: "1013", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/1013.mp4" },
-  { title: "Hero", src: "https://vsseqqcyieltucqr.public.blob.vercel-storage.com/hero.mp4" },
-];
+const videoBaseUrl = "https://vsseqqcyieltucqr.public.blob.vercel-storage.com";
 
-export const projects: Project[] = reelClips.map((clip, index) => ({
-  id: `film-${index + 1}`,
-  number: String(index + 1).padStart(2, "0"),
-  category: "FROM THE EDIT ROOM",
-  title: clip.title,
-  description:
-    "A film from the selected-work collection. Explore the full cut here, or tune into another screen to discover the next story.",
-  tags: [],
-  src: clip.src,
-  previewStart: 0,
-  previewEnd: 8,
-}));
+export const projects: Project[] = [
+  {
+    id: "logo-reveal",
+    title: "ASURATECH / Logo reveal",
+    src: `${videoBaseUrl}/Logo_reveal_for_ASURATECH_SOLUTIONS_202608252019.mp4`,
+    orientation: "landscape",
+    poster: "/images/showcase/logo-reveal.webp",
+  },
+  {
+    id: "asuratech",
+    title: "ASURATECH",
+    src: `${videoBaseUrl}/AsuraTECH.mp4`,
+    orientation: "portrait",
+    poster: "/images/showcase/asuratech.webp",
+  },
+  {
+    id: "github",
+    title: "GitHub",
+    src: `${videoBaseUrl}/GitHub.mp4`,
+    orientation: "landscape",
+    poster: "/images/showcase/github.webp",
+  },
+  {
+    id: "gym-asura",
+    title: "Gym Asura",
+    src: `${videoBaseUrl}/gymasura.mp4`,
+    orientation: "portrait",
+    poster: "/images/showcase/gym-asura.webp",
+  },
+  {
+    id: "lighthouse",
+    title: "Lighthouse",
+    src: `${videoBaseUrl}/Lighthouse.mp4`,
+    orientation: "portrait",
+    poster: "/images/showcase/lighthouse.webp",
+  },
+  {
+    id: "uiux",
+    title: "UI / UX",
+    src: `${videoBaseUrl}/UIUX.mp4`,
+    orientation: "portrait",
+    poster: "/images/showcase/uiux.webp",
+  },
+  {
+    id: "1013",
+    title: "1013",
+    src: `${videoBaseUrl}/1013.mp4`,
+    orientation: "portrait",
+    poster: "/images/showcase/1013.webp",
+  },
+  {
+    id: "hero",
+    title: "Hero",
+    src: `${videoBaseUrl}/hero.mp4`,
+    orientation: "landscape",
+    poster: "/images/showcase/hero.webp",
+  },
+];

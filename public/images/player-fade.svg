@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" preserveAspectRatio="none">
-  <defs>
-    <filter id="feather" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="22"/>
-    </filter>
-  </defs>
-  <path fill="white" filter="url(#feather)" d="M24 530 C26 436 85 344 142 248 C182 139 273 78 408 28 C476 5 543 20 622 17 L847 17 C920 16 934 69 956 135 C978 206 992 280 965 356 C944 424 876 462 809 506 C741 548 686 578 623 582 C545 555 480 562 420 568 C310 568 263 601 171 588 C95 585 25 570 24 530 Z"/>
-</svg>

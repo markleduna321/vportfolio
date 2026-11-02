@@ -1,0 +1,146 @@
+.work {
+  background: #f2f1e9;
+  color: #1b261d;
+  scroll-margin-top: 24px;
+}
+
+.showcaseSection {
+  padding: clamp(96px, 10vw, 150px) 7.2%;
+  border-top: 1px solid rgba(27, 38, 29, 0.16);
+  scroll-margin-top: 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.eyebrow,
+.filmCount,
+.filmCaption > span {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  line-height: 1.7;
+}
+
+.eyebrow { color: #4c5f47; }
+.filmCount { color: #5d6b5b; }
+
+.showcaseIntro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin: clamp(38px, 5vw, 70px) 0 clamp(52px, 6vw, 84px);
+}
+
+.showcaseIntro h2 {
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: 500;
+  letter-spacing: -0.075em;
+  line-height: 1;
+}
+
+.showcaseIntro em {
+  color: #718067;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.showcaseIntro > p {
+  max-width: 245px;
+  color: #5d695c;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.gallery {
+  columns: 3;
+  column-gap: clamp(20px, 2.5vw, 38px);
+}
+
+.film {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: clamp(40px, 4vw, 58px);
+  break-inside: avoid;
+  vertical-align: top;
+}
+
+.media,
+.placeholder {
+  background: #101711;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #101711;
+  object-fit: contain;
+}
+
+.landscape .video,
+.placeholder.landscape { aspect-ratio: 16 / 9; }
+
+.portrait .video,
+.placeholder.portrait { aspect-ratio: 9 / 16; }
+
+.video:focus-visible {
+  outline: 2px solid #536a4b;
+  outline-offset: 4px;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  color: #d3dbcd;
+  font-size: 13px;
+}
+
+.mediaError {
+  padding: 12px 14px;
+  background: #f8e9df;
+  color: #563626;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.mediaError a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.filmCaption {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-top: 18px;
+}
+
+.filmCaption > span {
+  flex-shrink: 0;
+  color: #5d6b5b;
+}
+
+.filmCaption h3 {
+  font-size: clamp(17px, 1.5vw, 21px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+  .showcaseSection { padding-right: 7%; padding-left: 7%; }
+  .gallery { columns: 2; }
+}
+
+@media (max-width: 640px) {
+  .showcaseSection { padding-top: 80px; padding-bottom: 80px; }
+  .showcaseIntro { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .showcaseIntro h2 { font-size: clamp(45px, 11vw, 64px); }
+  .gallery { columns: 1; }
+  .film { margin-bottom: 38px; }
+}

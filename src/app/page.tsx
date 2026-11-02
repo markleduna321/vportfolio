@@ -21,36 +21,32 @@ const capabilities = [
     category: "GENERATIVE DIRECTION",
     title: "Prompt-to-video generation",
     description:
-      "Translate a creative brief into moving images with precise prompts, visual references, and iterative shot development. Refine camera movement, composition, and continuity before bringing the footage into the edit.",
+      "Turn a creative brief into moving images, with thoughtful direction for every shot, movement, and composition.",
     tags: ["Prompt engineering", "Shot iteration", "Visual continuity"],
-    output: "Original footage, shaped around your story.",
   },
   {
     number: "02",
     category: "LANGUAGE & LOCALIZATION",
     title: "AI-assisted video translation",
     description:
-      "Adapt videos for new audiences through AI-assisted transcription and translation. Review language, align translated dialogue with the edit, and refine timing so the story keeps its original intent.",
+      "Adapt dialogue for new audiences while preserving the timing, meaning, and intent of the original story.",
     tags: ["Transcription", "Translation review", "Dialogue alignment"],
-    output: "Localized edits that preserve the message.",
   },
   {
     number: "03",
     category: "CAPTIONS & ACCESSIBILITY",
     title: "Automated SRT subtitle formatting",
     description:
-      "Turn raw transcripts into clean, delivery-ready subtitle files. Automate cue numbering, timestamp formatting, and line breaks, then check synchronization and readability against the final cut.",
+      "Turn transcripts into clean, synchronized subtitle files, checked for readability and ready to deliver.",
     tags: ["Timecode validation", "Cue formatting", "Readability checks"],
-    output: "Structured SRT files, ready for delivery.",
   },
   {
     number: "04",
     category: "WORKFLOW ENGINEERING",
     title: "Custom processing pipelines",
     description:
-      "Connect repetitive production steps into a purpose-built workflow. Batch-process footage, coordinate transcription and subtitle tasks, and standardize exports with validation at each handoff.",
+      "Build considered workflows that simplify repetitive production steps and keep every deliverable consistent.",
     tags: ["Batch processing", "Task automation", "Export validation"],
-    output: "Repeatable workflows. More time for the edit.",
   },
 ];
 
@@ -131,12 +127,9 @@ export default function Home() {
               </span>
             </p>
             <h1>
-              Stories that
+              Mark Harvey
               <br />
-              stay with
-              <br />
-              <span className={styles.heroAccent}>you</span>
-              <span className={styles.period}>.</span>
+              <span className={styles.heroAccent}>Leduna</span>
             </h1>
             <div className={styles.heroBottom}>
               <p>
@@ -150,44 +143,37 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={`${styles.capabilities} ${styles.section}`} id="capabilities">
+        <section
+          className={`${styles.capabilities} ${styles.section}`}
+          id="capabilities"
+          aria-labelledby="capabilities-heading"
+        >
           <div className={styles.sectionIntro}>
             <p className={styles.sectionLabel}>01 — CAPABILITIES &amp; SPECIALIZATIONS</p>
-            <h2>
+            <h2 id="capabilities-heading">
               Creative instinct.
               <br />
               <span>Technical precision.</span>
             </h2>
             <p className={styles.sectionDescription}>
-              More than a timeline and a cut. I combine the craft of video editing
-              with AI-assisted tools and custom workflows to take a story from
-              its first idea to its final frame.
+              A balance of storytelling, emerging tools, and meticulous craft.
+              From the first idea to the final frame.
             </p>
-            <div className={styles.capabilitySignature}>
-              <span aria-hidden="true" />
-              HUMAN-LED CREATIVITY. TECHNOLOGY WITH INTENT.
-            </div>
           </div>
           <div className={styles.capabilityList}>
             {capabilities.map((item) => (
               <article className={styles.capability} key={item.number}>
-                <div className={styles.capabilityTop}>
-                  <span className={styles.itemNumber}>{item.number}</span>
-                  <span className={styles.capabilityCategory}>{item.category}</span>
-                </div>
+                <span className={styles.itemNumber}>{item.number}</span>
                 <div className={styles.capabilityBody}>
+                  <p className={styles.capabilityCategory}>{item.category}</p>
                   <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <p className={styles.capabilityDescription}>{item.description}</p>
                   <ul className={styles.tagList} aria-label={`${item.title} specializations`}>
                     {item.tags.map((tag) => (
                       <li key={tag}>{tag}</li>
                     ))}
                   </ul>
                 </div>
-                <p className={styles.capabilityOutput}>
-                  <span>THE DELIVERABLE</span>
-                  {item.output}
-                </p>
               </article>
             ))}
           </div>
@@ -213,7 +199,7 @@ export default function Home() {
           </div>
           <div className={styles.toolArea}>
             {toolGroups.map((group) => (
-              <article className={styles.toolGroup} key={group.number} tabIndex={0} aria-label={group.title}>
+              <article className={styles.toolGroup} key={group.number}>
                 <div className={styles.toolGroupHeader}>
                   <span>{group.number}</span>
                   <p>{group.category}</p>

@@ -13,14 +13,14 @@ const links = [
 
 export default function SiteHeader({ revealClassName }: { revealClassName: string }) {
   const [scrolled, setScrolled] = useState(false);
-  const [revealedByScroll, setRevealedByScroll] = useState(false);
+  const [revealed, setRevealed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       const moved = window.scrollY > 16;
       setScrolled(moved);
-      if (moved) setRevealedByScroll(true);
+      if (moved) setRevealed(true);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -35,7 +35,7 @@ export default function SiteHeader({ revealClassName }: { revealClassName: strin
 
   return (
     <header
-      className={`${styles.header} ${revealClassName} ${revealedByScroll ? styles.revealed : ""} ${scrolled ? styles.scrolled : ""}`}
+      className={`${styles.header} ${revealClassName} ${revealed ? styles.revealed : ""} ${scrolled ? styles.scrolled : ""}`}
       onKeyDown={(event) => {
         if (event.key === "Escape" && menuOpen) {
           setMenuOpen(false);
@@ -46,7 +46,10 @@ export default function SiteHeader({ revealClassName }: { revealClassName: strin
       <a className={styles.wordmark} href="#home" aria-label="Mark Harvey Leduna, home" onClick={() => setMenuOpen(false)}>
         Mark Harvey <span>Leduna</span>
       </a>
-      <button className={styles.menuToggle} type="button" aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(!menuOpen)}>
+      <button className={styles.menuToggle} type="button" aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => {
+        setRevealed(true);
+        setMenuOpen((open) => !open);
+      }}>
         {menuOpen ? "CLOSE" : "MENU"} <span aria-hidden="true">{menuOpen ? "\u2212" : "+"}</span>
       </button>
       <nav id="main-navigation" className={styles.nav} data-open={menuOpen} aria-label="Main navigation">
